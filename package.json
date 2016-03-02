@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,11 @@
   "homepage": "https://github.com/kakapo2016-projects/linda#readme",
   "dependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "express": "^4.13.4",
+    "mocha": "^2.4.5",
+    "mocha-mongoose": "^1.1.1",
+    "mongodb": "^2.1.7",
+    "mongoose": "^4.4.5",
+    "nodemon": "^1.9.1"
   }
 }
