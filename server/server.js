@@ -11,7 +11,7 @@ var path = require('path')
 // middleware setup
 var app = express()
 app.use(parser.urlencoded({ extended: false }))
-app.use(express.static(__dirname + '../client'))
+app.use(express.static(path.join(__dirname, '../client')))
 app.set('views', path.join(__dirname, '../views'))
 app.engine('handlebars', exphbs({defaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
