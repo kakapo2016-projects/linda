@@ -22,9 +22,15 @@
   },
   "homepage": "https://github.com/kakapo2016-projects/linda#readme",
   "dependencies": {
+<<<<<<< HEAD
+    "Faker": "^0.7.2",
+    "express": "^4.13.4",
+    "mongoose": "^4.4.5",
+=======
     "body-parser": "^1.15.0",
     "express": "^4.13.4",
     "express-handlebars": "^3.0.0",
+>>>>>>> d4f5197dcd1ac9dc54539be6a7da7fcf7b10bcc3
     "nodemon": "^1.9.1"
   }
 }
