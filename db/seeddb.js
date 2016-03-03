@@ -14,8 +14,8 @@ function fakerUsers(userNumber) {
 	   	email: Faker.Internet.email(),
 	   	firstName: Faker.Name.firstName(),
 	   	lastName: Faker.Name.lastName(),
-	   	age: Faker.Helpers.randomNumber(),
-	   	// description: Faker.Random.catch_phrase_descriptor(),
+	   	age: 32,
+	   	description: "Pretend description!!",
 	   	location: Faker.Address.city(),
 	   	img: Faker.Image.imageUrl()
    	}
@@ -23,22 +23,32 @@ function fakerUsers(userNumber) {
  	}
  	return userOptions
 }
-var fakeOptions = fakerUsers(20) 
-console.log(fakeOptions)
+
+var db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+
+	var userModel = mongoose.model('User', userSchema)
+	console.log("DATABASE OPEN!")
+	var users = fakerUsers(20) 
+	users.forEach(function (user) {
+		var userForDB = new userModel(user)
+		// userForDB.save(function (err, userForDB) {
+		// 	if (err) return console.error(err)
+		// 	console.log(userForDB.firstName, "saved sucessfully! (maybe...)")
+		// })
+		userModel.find(function (err, userFromDB) {
+  	if (err) return console.error(err);
+  	console.log(userFromDB);
+})
+	})
+
+	// fakeUsers.save(function (err, fakerUsers) {
+	// 	if (err ) return console.log(err);
+
+	// })
+});
 
 
-// var db = mongoose.connection;
-// db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
 
-	// fakeOptions
-
-	// fakeOptions.forEach 
-		// new User(option)
-		// User.save()user.save(function (err, ))
-
-
-
-// });
-// 
 
