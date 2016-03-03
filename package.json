@@ -2,13 +2,13 @@
   "name": "linda",
   "version": "1.0.0",
   "description": "finding linda",
-  "main": "server/index.js",
+  "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "mocha",
-    "start": "nodemon ./server/server.js",
+    "start": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",

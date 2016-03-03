@@ -1,28 +1,28 @@
-var dbURI = 'monogodb://localhost/db_name'
-var expect = require('chai').expect
-var should = require('chai').should
-var mongoose = require('mongoose')
-var Dummy = mongoose.model('Dummy', new mongoose.Schema({ a:Number }))
+const dbURI    = 'mongodb://localhost/demo-app-clearing-db'
+const should   = require('chai').should()
+const mongoose = require('mongoose')
+const Dummy    = mongoose.model('Dummy', new mongoose.Schema({ a:Number }))
+const clearDB  = require('mocha-mongoose')(dbURI)
 
-describe("Example spec for a model", function() {
-  beforeEach(function(done) {
-    if (mongoose.connection.db) return done()
+describe('Example spec for a model', () => {
+  beforeEach((done) => {
+    if (mongoose.connection.db) return done();
 
     mongoose.connect(dbURI, done)
   })
 
-  it("can be saved", function(done) {
+  it('can be saved', (done) => {
     new Dummy({ a: 1 }).save(done)
   })
 
-  it("can be listed", function(done) {
-    new Dummy({ a: 1 }).save(function(err, model){
+  it('can be listed', (done) => {
+    new Dummy({ a: 1 }).save((err, model) => {
       if (err) return done(err)
 
-      new Dummy({ a: 2 }).save(function(err, model){
+      new Dummy({ a: 2 }).save((err, model) => {
         if (err) return done(err)
 
-        Dummy.find({}, function(err, docs){
+        Dummy.find({}, (err, docs) => {
           if (err) return done(err)
 
           // without clearing the DB between specs, this would be 3
@@ -32,3 +32,23 @@ describe("Example spec for a model", function() {
       })
     })
   })
+
+  it('can clear the DB on demand', (done) => {
+    new Dummy({ a: 5 }).save((err, model) => {
+      if (err) return done(err)
+
+      clearDB((err){
+        if (err) return done(err)
+
+        Dummy.find({}, (err, docs) =>{
+          if (err) return done(err)
+
+          console.log(docs)
+
+          docs.length.should.equal(0)
+          done()
+        })
+      })
+    })
+  })
+})
