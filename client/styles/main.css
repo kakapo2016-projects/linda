@@ -85,8 +85,16 @@ button {
 }
 
 button, #new-here {
-  margin-left: 20px;
+  margin-left: 0px;
   margin-bottom: 100px;
+}
+
+button, #back {
+  margin-right: 100px;
+
+}button, .sign-in {
+  margin-left: 25px;
+  margin-right: 30px;
 }
 
 form, #sign-in {
@@ -111,10 +119,26 @@ span, .form-group {
   color: black;
 }
 
-span, .sign-in-span {
-  margin-left: auto;
-  margin-right: auto;
+span, .sign-up-span {
+  margin: auto;
+  display: table;
   text-align: center;
   color: black;
-  margin-left: 200px;
+  align-content: center;
+}
+
+span, #button-span {
+  margin-top: 50px;
+}
+
+label {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+input {
+  border: none;
+}
+button {
+  border: none;
 }
