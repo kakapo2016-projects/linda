@@ -1,54 +1,76 @@
-const dbURI    = 'mongodb://localhost/'
-const should   = require('chai').should()
-const mongoose = require('mongoose')
-const Dummy    = mongoose.model('Dummy', new mongoose.Schema({ a:Number }))
-const clearDB  = require('mocha-mongoose')(dbURI)
+var dbURI = 'mongodb://localhost:27017/linda'
+var should = require('chai').should()
+var mongoose = require('mongoose')
+var clearDB  = require('mocha-mongoose')(dbURI)
+var dummyTest = mongoose.model('Dummy', new mongoose.Schema({
+  email: String,
+  firstName: String,
+  lastName: String,
+  passwordHash: String,
+  age: String,
+  description: String,
+  location: String,
+  img: String
+}))
 
-describe('Example spec for a model', () => {
-  beforeEach((done) => {
+describe('testing connection to db', function() {
+  beforeEach(function(done) {
     if (mongoose.connection.db) return done();
-
     mongoose.connect(dbURI, done)
   })
 
-  it('can be saved', (done) => {
-    new Dummy({ a: 1 }).save(done)
+  it('insert() user in the db', function(done) {
+    new dummyTest({
+      email: String,
+      firstName: String,
+      lastName: String,
+      passwordHash: String,
+      age: String,
+      description: String,
+      location: String,
+      img: String
+    }).insert(dummyTest)
   })
+  it('find() users in the db', function(done) {
+    new dummyTest({
+      email: String,
+      firstName: String,
+      lastName: String,
+      passwordHash: String,
+      age: String,
+      description: String,
+      location: String,
+      img: String
+    }).save(done)
+  })
+})
 
-  it('can be listed', (done) => {
-    new Dummy({ a: 1 }).save((err, model) => {
-      if (err) return done(err)
-
-      new Dummy({ a: 2 }).save((err, model) => {
-        if (err) return done(err)
-
-        Dummy.find({}, (err, docs) => {
-          if (err) return done(err)
-
-          // without clearing the DB between specs, this would be 3
-          docs.length.should.equal(2)
-          done()
-        })
-      })
+describe('testing to see if user can sign in', function() {
+  it('', function(done) {
+    new dummyTest({
+      email: String,
+      firstName: String,
+      lastName: String,
+      passwordHash: String,
+      age: String,
+      description: String,
+      location: String,
+      img: String
     })
   })
+})
 
-  it('can clear the DB on demand', (done) => {
-    new Dummy({ a: 5 }).save((err, model) => {
-      if (err) return done(err)
-
-      clearDB((err) => {
-        if (err) return done(err)
-
-        Dummy.find({}, (err, docs) =>{
-          if (err) return done(err)
-
-          console.log(docs)
-
-          docs.length.should.equal(0)
-          done()
-        })
-      })
+describe('testing to see if user can sign up', function() {
+  it('', function(done) {
+    new dummyTest({
+      email: String,
+      firstName: String,
+      lastName: String,
+      passwordHash: String,
+      age: String,
+      description: String,
+      location: String,
+      img: String
     })
   })
 })
