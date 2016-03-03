@@ -1,0 +1,15 @@
+body {
+  font-family: 'Lobster', cursive;
+  background-color: #B4ADEA;
+}
+
+h1 {
+  text-align: center;
+  font-size: 15vw;
+}
+
+h2 {
+  text-align: center;
+  font-size: 5vw;
+  color: #A75489;
+}
