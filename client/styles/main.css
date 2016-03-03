@@ -105,8 +105,16 @@ form, #sign-up {
 }
 
 span, .form-group {
-  /*margin-left: 50px;*/
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   color: black;
+}
+
+span, .sign-in-span {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: black;
+  margin-left: 200px;
 }
