@@ -15,6 +15,7 @@ for (var i = 0; i < 100; i++) {
    address: Faker.address.streetAddress(),
    city: Faker.address.city()
  }
+}
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
