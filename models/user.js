@@ -1,8 +1,8 @@
 var mongoose = require('mongoose');
 
-	modules.exports = mongoose.Schema({
+modules.exports = mongoose.Schema({
 		email: String,
-		firstName: String, 
+		firstName: String,
 		lastName: String,
 		passwordHash: String
 		age: Number,

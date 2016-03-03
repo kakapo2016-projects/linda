@@ -1,4 +1,4 @@
-const dbURI    = 'mongodb://localhost/demo-app-clearing-db'
+const dbURI    = 'mongodb://localhost/'
 const should   = require('chai').should()
 const mongoose = require('mongoose')
 const Dummy    = mongoose.model('Dummy', new mongoose.Schema({ a:Number }))
@@ -37,7 +37,7 @@ describe('Example spec for a model', () => {
     new Dummy({ a: 5 }).save((err, model) => {
       if (err) return done(err)
 
-      clearDB((err){
+      clearDB((err) => {
         if (err) return done(err)
 
         Dummy.find({}, (err, docs) =>{
