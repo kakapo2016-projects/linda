@@ -6,7 +6,7 @@ var express = require('express')
 var exphbs = require('express-handlebars')
 var parser = require('body-parser')
 var path = require('path')
-
+var db = require('../db/seeddb.js')
 
 // middleware setup
 var app = express()
