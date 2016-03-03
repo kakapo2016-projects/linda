@@ -1,0 +1,12 @@
+body {
+  font-family: 'Lobster', cursive;
+  background-color: #ffe4b5;
+}
+
+p {
+  color: lime;
+}
+
+fieldset {
+  border: none;
+}

@@ -5,11 +5,92 @@ body {
 
 h1 {
   text-align: center;
-  font-size: 15vw;
+  font-size: 10vw;
+  margin-top: 160px;
+  margin-bottom: 0px;
 }
 
 h2 {
+  margin-top: 0px;
+  margin-bottom: 200px;
   text-align: center;
-  font-size: 5vw;
+  font-size: 4vw;
+  color: #A75489;
+}
+
+legend {
+  text-align: center;
+  font-size: 3vw;
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+#rule {
+  margin-bottom: 100px;
+}
+
+fieldset {
+  border: none;
+}
+
+span, .form-group {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: center;
+}
+
+input {
+    border: 2px solid white;
+    -webkit-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    -moz-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+    font-family: 'Lobster', cursive;
+    font-size: 1.5vw;
+}
+
+button {
+  border: 2px solid white;
+    -webkit-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    -moz-box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    box-shadow:
+      inset 0 0 8px  rgba(0,0,0,0.1),
+            0 0 16px rgba(0,0,0,0.1);
+    padding: 15px;
+    background: rgba(255,255,255,0.5);
+    margin: 0 0 10px 0;
+    font-family: 'Lobster', cursive;
+    font-size: 1.5vw;
+}
+
+button, #new-here {
+  margin-left: 9px;
+  margin-bottom: 100px;
+}
+
+form, #sign-in {
+  margin-top: 0px;
+}
+
+form, #sign-up {
+  margin-top: 30px;
+}
+
+.form-group {
+  text-align: center;
+  font-size: 2vw;
+  margin-bottom: 10px;
   color: #A75489;
 }
