@@ -4,23 +4,23 @@
     <form id="sign-up" method="POST" action="/sign-up">
       <fieldset>
 
-      <span class="sign-in-span">
+      <span class="sign-up-span">
         <label for="first-name"> first name </label>
         <input class="form-control" type="first-name" name="first-name" id="first-name">
         <label for="last-name"> last name </label>
         <input class="form-control" type="last-name" name="last-name" id="last-name">
       </span>
 
-      <br>
-      <span class="sign-in-span">
+      <br><br>
+      <span class="sign-up-span">
         <label for="email"> email </label>
         <input class="form-control" type="email" name="email" id="email">
         <label for="password">password</label>
         <input class="form-control" type="password" name="password" id="password">
       </span>
 
-        <br>
-        <span class="sign-in-span">
+        <br><br>
+        <span class="sign-up-span">
         <label for="age"> age </label>
         <input class="form-control" type="age" name="age" id="age">
         <label for="location"> location </label>
@@ -28,7 +28,10 @@
       </span>
 
         <div class="form-group">
-          <input class="btn btn-primary" type="submit" value="Sign in">
+          <span id="button-span">
+          <a href="/"><button id="back" type="button">back</button></a>
+          <input class="btn btn-primary" type="submit" value="sign up">
+          </span>
         </div>
       </fieldset>
     </form>
