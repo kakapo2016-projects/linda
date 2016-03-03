@@ -30,7 +30,7 @@ var Faker = require('faker')
 
 // 	var userModel = mongoose.model('User', userSchema)
 // 	console.log("DATABASE OPEN!")
-// 	var users = fakerUsers(20) 
+// 	var users = fakerUsers(20)
 // 	users.forEach(function (user) {
 // 		var userForDB = new userModel(user)
 		// userForDB.save(function (err, userForDB) {
@@ -81,4 +81,3 @@ module.exports = function getUsers(callback) {
 
 // })
 // }
-
