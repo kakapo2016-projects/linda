@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 		firstName: String, 
 		lastName: String,
 		passwordHash: String,
-		age: Number,
+		age: String,
 		description: String,
 		location: String,
 		img: String
