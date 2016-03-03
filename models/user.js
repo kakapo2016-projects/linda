@@ -1,12 +1,12 @@
 var mongoose = require('mongoose');
 
-	modules.exports = mongoose.Schema({
+	module.exports = mongoose.Schema({
 		email: String,
 		firstName: String, 
 		lastName: String,
-		passwordHash: String
+		passwordHash: String,
 		age: Number,
 		description: String,
-		location: String
+		location: String,
 		img: String
 	})
