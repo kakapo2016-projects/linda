@@ -20,7 +20,8 @@ app.post('/sign-up', function (req, res) {
     		userExists = true
     	}
 
-    	})
+    })
+
   	if (!userExists) {
   		console.log('Im about to try and save the user')
     	dbFunctions.saveUser(db, req.body, function(err, resp) {
