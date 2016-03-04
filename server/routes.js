@@ -36,14 +36,13 @@ app.post('/sign-up', function (req, res) {
 
   app.get('/lindas', function (req, res) {
     var db = mongoose.connect('mongodb://localhost:27017/linda')
-    dbFunctions.getAllUsers(db, function(err, users) {
-      var allUser = req.body
+    dbFunctions.getUsers(db, function(err, users) {
+    	console.log(users)
+    	res.render('lindas', { users: users })
       db.disconnect(function() {
         console.log('database closed')
-        res.render(allUser)
       })
     })
-    res.render('lindas')
   })
 
   app.get('/sign-up', function (req, res) {
@@ -52,7 +51,7 @@ app.post('/sign-up', function (req, res) {
   app.get('/profile', function (req, res) {
   })
 
-  app.post('/sign-in', function (req, res) {
+  app.post('/sign-in', function (req, resp) {
     var userExists = false
 	var db = mongoose.connect('mongodb://localhost:27017/linda');
     dbFunctions.getUsers(db, function (err, users) {
@@ -63,7 +62,7 @@ app.post('/sign-up', function (req, res) {
     			userExists = true
     			db.disconnect(function() {
     			console.log('database closed')
-    			res.render('profile', {"user": user})
+    			resp.render('profile', {"user": user})
     		})
     	}
 
@@ -72,7 +71,7 @@ app.post('/sign-up', function (req, res) {
 				console.log(req.body.email, "User doen't exist yet!")
     		db.disconnect(function() {
     			console.log('database closed')
-	    		res.render('sign-up')
+	    		resp.render('sign-up')
     		})
 	  	}
 	  })

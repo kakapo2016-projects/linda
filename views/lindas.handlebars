@@ -1,5 +1,12 @@
 <h1 id="sign-up-h1">• Linda •</h1>
-<h2 id='sign-up-h2'> All Linda's</h2>
-<span>
-  <h3>{{}}</h3>
-</span>
+<h2 id='sign-up-h2'>Linda's Hall of Fame</h2>
+<ul class="people_list">
+  {{#each users}}
+  <h3>{{this.firstName}} {{this.lastName}}</h3>
+    <li>email: {{this.email}}</li>
+    <li>age: {{this.age}}</li>
+    <li>location: {{this.location}}</li>
+    <li>description: {{this.description}}</li>
+    <br><hr>
+  {{/each}}
+</ul>
