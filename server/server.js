@@ -21,7 +21,7 @@ require('./routes')(app)
 
 // handles test conditions
 if (require.main === module) {
-  server.listen(3000, function () {
+  server.listen(3000, function() {
     console.log('Linda has opened herself to you on port 3000')
   })
 }
