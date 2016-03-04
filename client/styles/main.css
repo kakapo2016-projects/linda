@@ -142,3 +142,8 @@ input {
 button {
   border: none;
 }
+
+#description {
+  width: 400px;
+  height: 100px;
+}
