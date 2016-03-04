@@ -19,7 +19,7 @@ app.post('/sign-up', function (req, res) {
     		res.render('home')
     		userExists = true
     	}
-    	
+
     	})
   	if (!userExists) {
   		console.log('Im about to try and save the user')
@@ -30,11 +30,19 @@ app.post('/sign-up', function (req, res) {
     			console.log('database closed')
     		})
 			})
-  	}		
-  }) 
+  	}
+  })
 })
- 
+
   app.get('/lindas', function (req, res) {
+    var db = mongoose.connect('mongodb://localhost:27017/linda')
+    dbFunctions.getAllUsers(db, function(err, users) {
+      var allUser = req.body
+      db.disconnect(function() {
+        console.log('database closed')
+        res.render(allUser)
+      })
+    })
     res.render('lindas')
   })
 
@@ -58,7 +66,7 @@ app.post('/sign-up', function (req, res) {
     			res.render('profile', {"user": user})
     		})
     	}
-    	
+
     	})
   	if (!userExists) {
 				console.log(req.body.email, "User doen't exist yet!")
