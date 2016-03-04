@@ -26,39 +26,13 @@ app.post('/sign-up', function (req, res) {
     	dbFunctions.saveUser(db, req.body, function(err, resp) {
     		console.log('I saved', resp)
     		db.disconnect(function() {
+    			res.render('profile', {"user": req.body})
     			console.log('database closed')
     		})
 			})
   	}		
   }) 
 })
-    		
-
-  //   		})
-  //   		userForDB.save(function (err, userForDB) {
-		// 			if (err) return console.error(err)
-		// 			console.log(userForDB.firstName, "saved sucessfully! (maybe...)")
-		// 		})
-    		
- 	// 			})
-  //   		var collection = db.get(getUsers)
-  //   		// submit to db
-  //   		collection.insert({
-  //   			"email": newUserEmail
-  //   		}, function (err, doc) {
-  //   			if (err) {
-  //   				res.send("There was a problem you are not a Linda prescriber")
-  //   			} else {
-  //   				res.redirect('/profile')
-  //   			}
-  //   		})
-  //  	})
-  // })
-    		
-    		
-
-    			// Otherwise, we're going to add them to the database
-    			// And redirect them to the (/profile) page
  
   app.get('/lindas', function (req, res) {
     res.render('lindas')
@@ -68,7 +42,9 @@ app.post('/sign-up', function (req, res) {
     res.render('sign-up')
   })
   app.get('/profile', function (req, res) {
-    res.render('profile')
+  	// var profile = req.body;
+   //  console.log('profile', profile)
+   //  res.render('profile', {"user": profile})
   })
 
   app.post('/sign-in', function (req, res) {
